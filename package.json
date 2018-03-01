@@ -1,24 +1,23 @@
 {
-  "name": "panda-cordova-plugin-echo",
+  "name": "panda-cordova-plugin-mobileads",
   "version": "1.0.0",
-  "description": "Panda 2 Cordova Echo Plugin",
+  "description": "Panda 2 Cordova Mobile Ads Plugin",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ekelokorpi/panda-cordova-plugin-echo.git"
+    "url": "git+https://github.com/ekelokorpi/panda-cordova-plugin-mobileads.git"
   },
   "keywords": [
     "panda2io",
-    "cordova",
-    "echo"
+    "cordova"
   ],
   "author": "Eemeli Kelokorpi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ekelokorpi/panda-cordova-plugin-echo/issues"
+    "url": "https://github.com/ekelokorpi/panda-cordova-plugin-mobileads/issues"
   },
-  "homepage": "https://github.com/ekelokorpi/panda-cordova-plugin-echo#readme"
+  "homepage": "https://github.com/ekelokorpi/panda-cordova-plugin-mobileads#readme"
 }
