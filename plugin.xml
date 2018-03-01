@@ -28,9 +28,9 @@
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
         </config-file>
 
-        <framework src="com.google.android.gms:play-services-ads:+" />
-
         <source-file src="src/android/MobileAds.java" target-dir="src/io/panda2/cordova" />
+        
+        <framework src="com.google.android.gms:play-services-ads:+" />
     </platform>
 
     <platform name="ios">
