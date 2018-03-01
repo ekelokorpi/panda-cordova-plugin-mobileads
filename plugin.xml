@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="panda-cordova-plugin-mobileads"
+    version="1.0.0">
+
+    <name>MobileAds</name>
+    <description>Panda 2 Cordova Mobile Ads Plugin</description>
+    <license>MIT</license>
+    <keywords>panda2io,cordova,mobileads</keywords>
+    <repo>https://github.com/ekelokorpi/panda-cordova-plugin-mobileads.git</repo>
+
+    <js-module src="www/mobileAds.js" name="mobileAds">
+        <clobbers target="game.mobileAds" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="MobileAds" >
+                <param name="android-package" value="io.panda2.cordova.MobileAds"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:name="com.google.android.gms.ads.AdActivity" />
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        </config-file>
+
+        <framework src="com.google.android.gms:play-services-ads:+" />
+
+        <source-file src="src/android/MobileAds.java" target-dir="src/io/panda2/cordova" />
+    </platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="MobileAds">
+                <param name="ios-package" value="MobileAds"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/MobileAds.h" />
+        <source-file src="src/ios/MobileAds.m" />
+    </platform>
+</plugin>
