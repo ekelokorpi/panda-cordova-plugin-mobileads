@@ -16,24 +16,33 @@
 
     <platform name="android">
         <config-file target="config.xml" parent="/*">
-            <feature name="MobileAds" >
-                <param name="android-package" value="io.panda2.cordova.MobileAds"/>
+            <feature name="MobileAdsPlugin" >
+                <param name="android-package" value="io.panda2.cordova.MobileAdsPlugin"/>
             </feature>
         </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:name="com.google.android.gms.ads.AdActivity" />
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        </config-file>
 
-        <source-file src="src/android/MobileAds.java" target-dir="src/io/panda2/cordova" />
+        <source-file src="src/android/MobileAdsPlugin.java" target-dir="src/io/panda2/cordova" />
         
         <framework src="com.google.android.gms:play-services-ads:+" />
     </platform>
 
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="MobileAds">
-                <param name="ios-package" value="MobileAds"/>
+            <feature name="MobileAdsPlugin">
+                <param name="ios-package" value="MobileAdsPlugin"/>
             </feature>
         </config-file>
 
-        <header-file src="src/ios/MobileAds.h" />
-        <source-file src="src/ios/MobileAds.m" />
+        <header-file src="src/ios/MobileAdsPlugin.h" />
+        <source-file src="src/ios/MobileAdsPlugin.m" />
+
+        <framework src="src/ios/GoogleMobileAds.framework" custom="true" />
     </platform>
 </plugin>
